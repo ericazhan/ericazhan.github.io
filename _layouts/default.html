@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-us">
- 
-  {% include head.html %}
-  {% include analytics.html %}
+  {% include head.html %} {% include analytics.html %}
 
-<body class="theme-6dd">
-
+  <body class="theme-6dd">
     {% include sidebar.html %}
 
     <div class="wrap">
       <div class="masthead">
         <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
+          <div class="container parent-div">
+            <div class="container child-div">
+              <h3 class="masthead-title">
+                <a href="/" title="Home">{{ site.title }}</a>
+                <small>{{ site.tagline }}</small>
+              </h3>
+            </div>
+            <div class="container" id="search">
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="search blog posts..."
+                />
+                <div class="search"></div>
+                <ul id="results-container"></ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="container content">
-        {{ content }}
-      </div>
+      <div class="container content">{{ content }}</div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
     <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
+          (function(document) {
+            var toggle = document.querySelector('.sidebar-toggle');
+            var sidebar = document.querySelector('#sidebar');
+            var checkbox = document.querySelector('#sidebar-checkbox');
 
-        document.addEventListener('click', function(e) {
-          var target = e.target;
+            document.addEventListener('click', function(e) {
+              var target = e.target;
 
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
+              if(!checkbox.checked ||
+                  sidebar.contains(target) ||
+                  (target === checkbox || target === toggle)) return;
 
-          checkbox.checked = false;
-        }, false);
-      })(document);
+              checkbox.checked = false;
+            }, false);
+          })(document);
     </script>
 
-{% include footer.html %}
+<script src="../public/simple-jekyll-search.min.js"></script>
+
+    <script >
+       window.simpleJekyllSearch = new SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '../public/search.json',
+            searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+            noResultsText: 'No results found',
+            limit: 10,
+            fuzzy: false,
+            exclude: ['Welcome']
+            })
+    </script>
+
+<!-- -->
+
+    {% include footer.html %}
+  </body>
+</html>

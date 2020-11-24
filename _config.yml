@@ -10,17 +10,20 @@ permalink:           pretty
 
 
 # Setup
-title:               erica
-tagline:             'inner space.'
+title:               erica's playground
+
+tagline:             'share my work'
 description:         '未来从现实生长.'
-url:                 https://ericazhan.github.io
-baseurl:             /
+url:                 "https://ericazhan.github.io"
+baseurl:             ""
 paginate:            7
+permalink:           /:short_year:month:day:title.html #/:year:month:day.html
+
 
 # About/contact
 author:
   name:              erica
-  email:             ericazhan@gmail.com
+  email:             ericazhan123@gmail.com
 
 # Custom vers
 version:             3.0
@@ -38,3 +41,4 @@ theme:
   
 plugins:
   - jekyll-feed
+  - jekyll-paginate

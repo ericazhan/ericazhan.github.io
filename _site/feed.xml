@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-24T23:46:32+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">erica’s playground</title><subtitle>未来从现实生长.</subtitle><author><name>erica</name><email>ericazhan123@gmail.com</email></author><entry><title type="html">博客修护笔记</title><link href="http://localhost:4000/201124notes_jekyll_pages.html" rel="alternate" type="text/html" title="博客修护笔记" /><published>2020-11-24T00:00:00+01:00</published><updated>2020-11-24T00:00:00+01:00</updated><id>http://localhost:4000/notes_jekyll_pages</id><content type="html" xml:base="http://localhost:4000/201124notes_jekyll_pages.html">&lt;p&gt;如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？&lt;/p&gt;
+
+&lt;h2 id=&quot;修改文章post链接地址&quot;&gt;修改文章post链接地址&lt;/h2&gt;
+
+&lt;p&gt;jekyll默认为博客配置的地址实在有些长，比如本文曾经默认的链接地址是&lt;strong&gt;/2020/11/24/improve_jekyll_pages&lt;/strong&gt;。这么多层叠加，不利于搜索引擎寻找都该页面。所以为了方便搜索，所谓SEO优化。&lt;/p&gt;
+
+&lt;p&gt;一是修改博客链接。&lt;/p&gt;
+
+&lt;p&gt;博客的地址是采用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink&lt;/code&gt;设置的。参考官网 &lt;a href=&quot;https://jekyllrb.com/docs/permalinks/&quot;&gt;Permalinks_Jekyll&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;只要在根目录下的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中，写上一行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink: /:title.html&lt;/code&gt;。中间有一个空格。&lt;/p&gt;
+
+&lt;p&gt;另外可以在每个博客页面的前面，加一个description.&lt;/p&gt;
+
+&lt;h2 id=&quot;加入全文搜索功能&quot;&gt;加入全文搜索功能&lt;/h2&gt;
+
+&lt;p&gt;使用的现成的代码仓库在这里：&lt;a href=&quot;https://github.com/christian-fei/Simple-Jekyll-Search&quot;&gt;Simple-Jekyll-Search&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ref. &lt;a href=&quot;https://lemonchann.github.io/create_blog_with_github_pages/&quot;&gt;可能是最全面的github pages搭建个人博客教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;设计样式挑选自&lt;a href=&quot;https://www.mockplus.com/blog/post/search-bar-design&quot;&gt;20 Creative Search Bar Design&lt;/a&gt;，照抄代码在&lt;a href=&quot;https://codepen.io/AlbertFeynman/pen/BPvzWZ&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;将所有之前别人的commits都清零&quot;&gt;将所有之前别人的commits都清零&lt;/h2&gt;
+
+&lt;p&gt;保持现在博客状态，但是如何把commit历史清零？以下是安全做法：
+&lt;a href=&quot;https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github&quot;&gt;git - how to delete all commit history in github? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;新建一个孤子分支，并进入这个分支&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout --orphan temp_branch&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;在孤子分支中复制所有master分支的文件，commit&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;
+  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -am &quot;my first message&quot;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;删除原本的master分支&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -D master&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;把孤子分支改名为master&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -m master&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;强制更新远端仓库&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -f origin master&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;changelog&quot;&gt;Changelog&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;201124 erica init&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>erica</name><email>ericazhan123@gmail.com</email></author><category term="geek" /><category term="web" /><category term="code" /><summary type="html">如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？</summary></entry><entry><title type="html">开始双拼</title><link href="http://localhost:4000/200809How2_flypy.html" rel="alternate" type="text/html" title="开始双拼" /><published>2020-08-09T00:00:00+02:00</published><updated>2020-08-09T00:00:00+02:00</updated><id>http://localhost:4000/How2_flypy</id><content type="html" xml:base="http://localhost:4000/200809How2_flypy.html">&lt;p&gt;在不知道自己不知道的世界里安心用&lt;strong&gt;全拼+搜狗输入法&lt;/strong&gt;很多年。写字越来越多后，每次打字再选字的厌烦堆积，该改变了。&lt;/p&gt;
+
+&lt;p&gt;在双拼和五笔（以为消亡却原来一直都在），表形符（闻所未闻）中纠结了几个小时，最后选择小鹤双拼。&lt;/p&gt;
+
+&lt;h2 id=&quot;双拼-or-五笔&quot;&gt;双拼 or 五笔？&lt;/h2&gt;
+
+&lt;p&gt;简单下个结论是：五笔打字更快，重字率更低，不过学习路径更长。双拼有汉语拼音为基础，学的更快，重字率比五笔高。&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&quot;https://sspai.com/post/33019&quot;&gt;选择输入法的哲学：兼论双拼的优缺点 - 少数派&lt;/a&gt;这里提到一个观点：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;录入文字的过程可以简单分为两个环节：&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;大脑将思考的内容转化为可以通过键盘录入的内容（比如字形、字音）；&lt;/li&gt;
+    &lt;li&gt;通过键盘将字形或字音录入电脑并组合为最终文字。&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;…..&lt;/p&gt;
+
+  &lt;p&gt;请你任意回想一句话，不用说出来也不用写下来。
+相信你大脑里肯定更容易「回响起」这句话的声音而不是浮现出这句话的文字。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个观点让我动摇。自己的经验里，打字时的确是自己和自己对话。多少次，我可以清晰听见自己内心的声音。五笔和双拼的比较，转为字形和字音的选择，那么我选字音。&lt;/p&gt;
+
+&lt;p&gt;表形符很有趣，把汉字和拉丁字母按照大致外形联系起来的输入法，也属于字形打字，却比五笔容易记忆太多。全网可能只有大妈在使用。附送文章链接&lt;a href=&quot;https://org.zoomquiet.io/pyblosxom/zen/chinese/winbx-imestory-2006-05-15-12-00#toptopNUNRMlJaT&quot;&gt;表形码的消亡背景！ &lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;双拼简介&quot;&gt;双拼简介&lt;/h2&gt;
+
+&lt;p&gt;双拼，如名所示：&lt;strong&gt;每个字的录入只按两个键——一个声母，一个韵母。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;声母——对应键盘的键不变。只需要记住zh,ch,sh分别对应&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;u&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;韵母——需要全新记忆。不同的双拼方案有不同的韵母键位。这里我学的是小鹤双拼。官网在这里&lt;a href=&quot;https://www.flypy.com/index.html&quot;&gt;小鹤双拼·小鹤音形 - 官方网站&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;按完声母和韵母后，仍然需要再次击键，决定选择哪个字。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;很多人学习适应双拼后停下了，已经比全拼提升一些速度了。如果想走的更快，试试小鹤音形：&lt;/p&gt;
+
+&lt;p&gt;类似五笔。每个字按键4次，前两次击键确定字音，后两次确定字形，于是跳过选字步骤，打字速度可以飞起。学习就复杂一点：&lt;a href=&quot;http://react.xhup.club/&quot;&gt;小鹤音形编码查询&lt;/a&gt;。我还没学。&lt;/p&gt;
+
+&lt;h2 id=&quot;双拼学习路径&quot;&gt;双拼学习路径&lt;/h2&gt;
+
+&lt;p&gt;学习很简单，一小时足矣。适应提速大概要一个月。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-读一遍官网的打油诗有个基本概念不用背下来&quot;&gt;1. 读一遍&lt;a href=&quot;https://www.flypy.com/pin.html&quot;&gt;官网&lt;/a&gt;的打油诗，有个基本概念，不用背下来。&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Kuai_ingLiang_uangRuanCaoZou&lt;/p&gt;
+
+  &lt;p&gt;快迎两王软草走&lt;/p&gt;
+
+  &lt;p&gt;T_ue_veQiuYunWeiJ_anMian&lt;/p&gt;
+
+  &lt;p&gt;特约秋云为见面&lt;/p&gt;
+
+  &lt;p&gt;Xia_uaSong_iongU_shuI_chiV_zhui_v&lt;/p&gt;
+
+  &lt;p&gt;夏娃怂恿书痴追&lt;/p&gt;
+
+  &lt;p&gt;GengDaiBinNiaoFenPieHang&lt;/p&gt;
+
+  &lt;p&gt;更待滨鸟分撇航&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;2-直接开始通过打字记忆&quot;&gt;2. &lt;strong&gt;直接&lt;/strong&gt;开始通过打字记忆：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;练习网站：&lt;a href=&quot;https://api.ihint.me/shuang/&quot;&gt;双拼练习 @ BlueSky&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;选择&lt;strong&gt;练习顺序：全部顺序&lt;/strong&gt;，勾选&lt;strong&gt;显示键位图&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;从&lt;strong&gt;啊&lt;/strong&gt;开始，边看提升边敲，敲2-3遍，就基本熟悉了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把&lt;a href=&quot;https://www.jianshu.com/p/acecd08f053d&quot;&gt;键位图&lt;/a&gt;打印出来，放一边备用。再选择&lt;strong&gt;练习顺序：全部随机，无拼音&lt;/strong&gt;，并关掉键位图显示。再来2-3遍，强化记忆。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如此学习就结束了。大概1小时。录了个视频&lt;a href=&quot;https://www.bilibili.com/video/BV1JK411p7A1&quot;&gt;学习小鹤双拼一小时的结果_哔哩哔哩 &lt;/a&gt;。（也算开始学习视频制作了！）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-把电脑手机平板里的所有全拼换成双拼从现在起只用双拼吧&quot;&gt;3. 把电脑手机平板里的所有全拼换成双拼。从现在起，只用双拼吧！&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果windows，直接在搜狗中调出小鹤双拼：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;在搜狗任务栏输入法的图标上点击右键，选择&lt;strong&gt;设置属性&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;依次在&lt;strong&gt;常用——特殊习惯&lt;/strong&gt;，中选择双拼&lt;/li&gt;
+      &lt;li&gt;点击双拼方案-设置，在弹出的窗口中选择&lt;strong&gt;小鹤双拼&lt;/strong&gt;，之后点击确定，回到主窗口再次点击确定即可 END.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果mac，自带的输入法也包含小鹤双拼&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;熟悉喜欢后，可以再试试一个神奇的输入法：&lt;a href=&quot;https://rime.im/&quot;&gt;RIME|中州韻輸入法引擎&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>erica</name><email>ericazhan123@gmail.com</email></author><category term="geek" /><category term="geek" /><category term="工具" /><summary type="html">在不知道自己不知道的世界里安心用全拼+搜狗输入法很多年。写字越来越多后，每次打字再选字的厌烦堆积，该改变了。</summary></entry></feed>
