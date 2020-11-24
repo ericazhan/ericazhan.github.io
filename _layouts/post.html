@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }} <br>
+	
+{{page.tags | capitalize | join: ', '}} <br>
+
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+    <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+    本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND</a> 进行许可.
+    如需转载, 请标明 <b style = "color:#ca4d4d">ericazhan</b> + <b style = "color:#ca4d4d">源地址</b> 
+<br> <br>
+  <img width="50" height="50" alt="Glider" src="/images/glider.png" >
+  <p>
+  <em>Too fast to live.</em>
+  </p>
+</div>
+
+<!--这个地方可以放 utterances -->
+
+<script src="https://utteranc.es/client.js"
+        repo="ericazhan/ericazhan.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!--这个地方可以放 utterances -->
+
+
+<div class="comments">
+    {% include comments.html %}
+</div>
+
+
+<div class="related">
+  <h3>近日文章</h3>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <strong>
+			<i><a href="{{ site_url }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+			</a></i>
+        </strong>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

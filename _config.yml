@@ -1,0 +1,40 @@
+# Dependencies
+markdown:            kramdown
+highlighter:         rouge
+
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+
+# Setup
+title:               erica
+tagline:             'inner space.'
+description:         '未来从现实生长.'
+url:                 https://ericazhan.github.io
+baseurl:             /
+paginate:            7
+
+# About/contact
+author:
+  name:              erica
+  email:             ericazhan@gmail.com
+
+# Custom vers
+version:             3.0
+
+# Social Media
+github:				https://github.com/ericazhan
+
+
+# Theme Author (Please don't edit this line cause of MIT LICENSE rules)
+theme:
+  creator:			Yixuan Li
+  codename:			Geek-green
+  link:         https://github.com/YixuanFranco
+  
+  
+plugins:
+  - jekyll-feed
