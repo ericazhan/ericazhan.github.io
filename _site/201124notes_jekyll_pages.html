@@ -134,7 +134,7 @@
 
 <h2 id="修改文章post链接地址">修改文章post链接地址</h2>
 
-<p>jekyll默认为博客配置的地址实在有些长，比如本文曾经默认的链接地址是<strong>/2020/11/24/improve_jekyll_pages</strong>。这么多层叠加，不利于搜索引擎寻找都该页面。所以为了方便搜索，所谓SEO优化。</p>
+<p>jekyll默认为博客配置的地址实在有些长，比如本文曾经默认的链接地址是<em>/2020/11/24/improve_jekyll_pages</em>。这么多层叠加，不利于搜索引擎寻找都该页面。所以为了方便搜索，所谓SEO优化。</p>
 
 <p>一是修改博客链接。</p>
 
@@ -142,7 +142,7 @@
 
 <p>只要在根目录下的<code class="language-plaintext highlighter-rouge">_config.yml</code>文件中，写上一行<code class="language-plaintext highlighter-rouge">permalink: /:title.html</code>。中间有一个空格。</p>
 
-<p>另外可以在每个博客页面的前面，加一个description.</p>
+<p>二是在每个博客页面的前面，加一个description.几句话描述下这个页面。</p>
 
 <h2 id="加入全文搜索功能">加入全文搜索功能</h2>
 
@@ -152,49 +152,46 @@
 
 <p>设计样式挑选自<a href="https://www.mockplus.com/blog/post/search-bar-design">20 Creative Search Bar Design</a>，照抄代码在<a href="https://codepen.io/AlbertFeynman/pen/BPvzWZ">这里</a></p>
 
+<h2 id="修改配色">修改配色</h2>
+
+<p>想把原来的颜色变浅一点，但是在同样的色系里，比如之前的搜索键的深红色换成浅红。</p>
+
+<p>可以通过代码中的颜色编码 <strong>#ca4d4d</strong> 在这个网站 <a href="https://color-hex.org/color/ca4d4d">Hex Color Codes</a>可以找到比它更深或更浅的颜色代码。</p>
+
 <h2 id="将所有之前别人的commits都清零">将所有之前别人的commits都清零</h2>
 
 <p>保持现在博客状态，但是如何把commit历史清零？以下是安全做法：
 <a href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">git - how to delete all commit history in github? - Stack Overflow</a></p>
 
-<ul>
+<ol>
   <li>
-    <ol>
-      <li>新建一个孤子分支，并进入这个分支</li>
-    </ol>
+    <p>新建一个孤子分支，并进入这个分支</p>
 
     <p><code class="language-plaintext highlighter-rouge">git checkout --orphan temp_branch</code></p>
   </li>
   <li>
-    <ol>
-      <li>在孤子分支中复制所有master分支的文件，commit</li>
-    </ol>
+    <p>在孤子分支中复制所有master分支的文件，commit</p>
 
-    <p><code class="language-plaintext highlighter-rouge">git add -A</code>
-  <code class="language-plaintext highlighter-rouge">git commit -am "my first message"</code></p>
+    <p><code class="language-plaintext highlighter-rouge">git add -A</code></p>
+
+    <p><code class="language-plaintext highlighter-rouge">git commit -am "my first message"</code></p>
   </li>
   <li>
-    <ol>
-      <li>删除原本的master分支</li>
-    </ol>
+    <p>删除原本的master分支</p>
 
     <p><code class="language-plaintext highlighter-rouge">git branch -D master</code></p>
   </li>
   <li>
-    <ol>
-      <li>把孤子分支改名为master</li>
-    </ol>
+    <p>把孤子分支改名为master</p>
 
     <p><code class="language-plaintext highlighter-rouge">git branch -m master</code></p>
   </li>
   <li>
-    <ol>
-      <li>强制更新远端仓库</li>
-    </ol>
+    <p>强制更新远端仓库</p>
 
     <p><code class="language-plaintext highlighter-rouge">git push -f origin master</code></p>
   </li>
-</ul>
+</ol>
 
 <h2 id="changelog">Changelog</h2>
 

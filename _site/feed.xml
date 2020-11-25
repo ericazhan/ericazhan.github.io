@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-24T23:46:32+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">erica’s playground</title><subtitle>未来从现实生长.</subtitle><author><name>erica</name><email>ericazhan123@gmail.com</email></author><entry><title type="html">博客修护笔记</title><link href="http://localhost:4000/201124notes_jekyll_pages.html" rel="alternate" type="text/html" title="博客修护笔记" /><published>2020-11-24T00:00:00+01:00</published><updated>2020-11-24T00:00:00+01:00</updated><id>http://localhost:4000/notes_jekyll_pages</id><content type="html" xml:base="http://localhost:4000/201124notes_jekyll_pages.html">&lt;p&gt;如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-25T23:58:55+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">erica’s playground</title><subtitle>未来从现实生长.</subtitle><author><name>erica</name><email>ericazhan123@gmail.com</email></author><entry><title type="html">博客修护笔记</title><link href="http://localhost:4000/201124notes_jekyll_pages.html" rel="alternate" type="text/html" title="博客修护笔记" /><published>2020-11-24T00:00:00+01:00</published><updated>2020-11-24T00:00:00+01:00</updated><id>http://localhost:4000/notes_jekyll_pages</id><content type="html" xml:base="http://localhost:4000/201124notes_jekyll_pages.html">&lt;p&gt;如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？&lt;/p&gt;
 
 &lt;h2 id=&quot;修改文章post链接地址&quot;&gt;修改文章post链接地址&lt;/h2&gt;
 
-&lt;p&gt;jekyll默认为博客配置的地址实在有些长，比如本文曾经默认的链接地址是&lt;strong&gt;/2020/11/24/improve_jekyll_pages&lt;/strong&gt;。这么多层叠加，不利于搜索引擎寻找都该页面。所以为了方便搜索，所谓SEO优化。&lt;/p&gt;
+&lt;p&gt;jekyll默认为博客配置的地址实在有些长，比如本文曾经默认的链接地址是&lt;em&gt;/2020/11/24/improve_jekyll_pages&lt;/em&gt;。这么多层叠加，不利于搜索引擎寻找都该页面。所以为了方便搜索，所谓SEO优化。&lt;/p&gt;
 
 &lt;p&gt;一是修改博客链接。&lt;/p&gt;
 
@@ -10,7 +10,7 @@
 
 &lt;p&gt;只要在根目录下的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中，写上一行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink: /:title.html&lt;/code&gt;。中间有一个空格。&lt;/p&gt;
 
-&lt;p&gt;另外可以在每个博客页面的前面，加一个description.&lt;/p&gt;
+&lt;p&gt;二是在每个博客页面的前面，加一个description.几句话描述下这个页面。&lt;/p&gt;
 
 &lt;h2 id=&quot;加入全文搜索功能&quot;&gt;加入全文搜索功能&lt;/h2&gt;
 
@@ -20,49 +20,46 @@
 
 &lt;p&gt;设计样式挑选自&lt;a href=&quot;https://www.mockplus.com/blog/post/search-bar-design&quot;&gt;20 Creative Search Bar Design&lt;/a&gt;，照抄代码在&lt;a href=&quot;https://codepen.io/AlbertFeynman/pen/BPvzWZ&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;修改配色&quot;&gt;修改配色&lt;/h2&gt;
+
+&lt;p&gt;想把原来的颜色变浅一点，但是在同样的色系里，比如之前的搜索键的深红色换成浅红。&lt;/p&gt;
+
+&lt;p&gt;可以通过代码中的颜色编码 &lt;strong&gt;#ca4d4d&lt;/strong&gt; 在这个网站 &lt;a href=&quot;https://color-hex.org/color/ca4d4d&quot;&gt;Hex Color Codes&lt;/a&gt;可以找到比它更深或更浅的颜色代码。&lt;/p&gt;
+
 &lt;h2 id=&quot;将所有之前别人的commits都清零&quot;&gt;将所有之前别人的commits都清零&lt;/h2&gt;
 
 &lt;p&gt;保持现在博客状态，但是如何把commit历史清零？以下是安全做法：
 &lt;a href=&quot;https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github&quot;&gt;git - how to delete all commit history in github? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ol&gt;
   &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;新建一个孤子分支，并进入这个分支&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;p&gt;新建一个孤子分支，并进入这个分支&lt;/p&gt;
 
     &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout --orphan temp_branch&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;在孤子分支中复制所有master分支的文件，commit&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;p&gt;在孤子分支中复制所有master分支的文件，commit&lt;/p&gt;
 
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;
-  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -am &quot;my first message&quot;&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add -A&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -am &quot;my first message&quot;&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;删除原本的master分支&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;p&gt;删除原本的master分支&lt;/p&gt;
 
     &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -D master&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;把孤子分支改名为master&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;p&gt;把孤子分支改名为master&lt;/p&gt;
 
     &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -m master&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;强制更新远端仓库&lt;/li&gt;
-    &lt;/ol&gt;
+    &lt;p&gt;强制更新远端仓库&lt;/p&gt;
 
     &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -f origin master&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;changelog&quot;&gt;Changelog&lt;/h2&gt;
 

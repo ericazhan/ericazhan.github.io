@@ -127,7 +127,7 @@ ul, ol, dl {
 }
 
 #search{
-  padding-left:13rem;
+  padding-left:10rem;
 }
 
 dt {
@@ -170,7 +170,7 @@ code {
   padding: .25em .5em;
   font-size: 85%;
   color: #ffffff;
-  background-color: #ca4d4d;
+  background-color: #D47070;
   border-radius: 3px;
 }
 pre {
