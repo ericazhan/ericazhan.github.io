@@ -31,29 +31,11 @@ jekyll默认为博客配置的地址实在有些长，比如本文曾经默认�
 
 1. 在[这里](https://github.com/christian-fei/Simple-Jekyll-Search/tree/master/example/js)下载文件 `simple-jekyll-search.min.js`放到博客仓库里。
 
-2. 再在仓库里放一个json文件，代码如下：
+2. 再在仓库里放一个json文件，代码在其[wiki](https://github.com/christian-fei/Simple-Jekyll-Search/wiki#enabling-full-text-search)中。
 
-   ```
-   ---
-   layout: none
-   ---
-   [
-     {% for post in site.posts %}
-       {
-         "title"    : "{{ post.title | escape }}",
-         "category" : "{{ post.category }}",
-         "tags"     : "{{ post.tags | join: ', ' }}",
-         "url"      : "{{ site.baseurl }}{{ post.url }}",
-         "date"     : "{{ post.date }}",
-         "content"  : "{{ post.content | strip_html | strip_newlines | escape | remove: '\'| replace: " ", ' ' }}"
-       } {% unless forloop.last %},{% endunless %}
-     {% endfor %}
-   ]
-   ```
+   这样可以开展全文搜索。不过我照搬后报错，于是删掉第二部分搜索页面功能，只保留搜索博文。代码在[ericazhan.github.io/search.json](https://github.com/ericazhan/ericazhan.github.io/blob/master/public/search.json)
 
-   这样可以开展全文搜索。
-
-3. 在html文件中想放搜索框的地方，插入如下代码，注意两个引用文件的地址可能需要按情况调整：
+3. 在html文件中想放搜索框的地方，抄入如下别人的代码，两个引用文件的地址按情况调整：
 
     ```
     <div class="search-container">
