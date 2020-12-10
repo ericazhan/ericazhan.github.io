@@ -136,9 +136,9 @@ Et si, pour commencer, vous remplaciez << j'ai peur>>  par  << je suis excitée>
 
 - 巴黎6区- 微笑吧 [Bars à sourire à Paris 6e – Bar à Sourire](https://www.barsasourire.com/france/bar-a-sourire-paris-6e/)
 
-- Charenton-le-Pont的潜水厅 [Paris Plongée Formation | Plongez en fosse à quelques minutes de Paris](https://www.parisplongee.com/)
+- Charenton-le-Pont的潜水厅 [Paris Plongée Formation - Plongez en fosse à quelques minutes de Paris](https://www.parisplongee.com/)
 
-- 巴黎最老的拜占庭教堂的仪式 [Eglise Saint Julien Le Pauvre | Facebook](https://www.facebook.com/sjlpmelkites/)
+- 巴黎最老的拜占庭教堂的仪式 [Eglise Saint Julien Le Pauvre](https://www.facebook.com/sjlpmelkites/)
 
 - 阿拉伯浴 [Les Cent Ciels - Bains & Hammam - Paris](https://paris.hammam-lescentciels.com/)
 
