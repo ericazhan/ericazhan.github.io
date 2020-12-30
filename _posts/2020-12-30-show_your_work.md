@@ -1,6 +1,6 @@
 ---
 layout: post
-title: show your work: 你的过程同样重要
+title: 你的过程同样重要——ShowYourWork书摘
 category: books
 description: "为什么要写博客，要分享你正在做的事情项目"
 tags: [分享,成长,作品]
