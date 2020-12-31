@@ -6,8 +6,10 @@ description: "如何修改GitHub page中每篇博客的链接？如何加入全�
 tags: [web,code]
 ---
 
-如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？
+如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？等等问题，随时学习，随时记录。
 
+* TOC
+{:toc}
 
 ## 修改文章post链接地址
 
@@ -118,7 +120,27 @@ jekyll默认为博客配置的地址实在有些长，比如本文曾经默认�
 
 主要参考： [陈素封：如何搭建个人独立博客？ - 知乎](https://www.zhihu.com/question/20463581/answer/25478916)
 
+## 给博客增加目录
+
+jekyll默认使用Kramdown来解析markdown语法，kramdown自带生成目录功能。先检查你的jekyll是不是kramdown解析，需要看 **_config.yml** 文件中是否有这一行：
+
+```
+markdown: kramdown
+```
+
+
+如果的确是kramadown,那么增加目录特别简单，不需要任何附加插件，自带生成目录功能。添加目录，只要在对应博客的md文件中，希望增加目录的地方写这两行代码就OK啦。
+
+```
+* TOC
+{:toc}
+```
+
+
+参考：[How I Add a Table of Contents to my Jekyll Blog Written in Markdown](http://www.seanbuscay.com/blog/jekyll-toc-markdown/)
+
 ## Changelog
 
-- 201130 erica 加入自定义域名章节，补充搜索章节的具体步骤
-- 201124 erica init
+- 201231 +博客增加目录
+- 201130 加入自定义域名章节，补充搜索章节的具体步骤
+- 201124 init
