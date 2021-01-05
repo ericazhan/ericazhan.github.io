@@ -302,7 +302,7 @@ Tim
 
 # xx不舒适练习
 
-##  **Learn to Eye Gaze (2 days)** 
+##  Learn to Eye Gaze (2 days)
 
 练习和人对视，路过的行人，或者谈话对方。直视对方，直到他们先移开眼睛。
 
@@ -412,4 +412,4 @@ Call at least one potential superstar mentor per day for three days. E-mail only
 
 # Changelog
 
-200105 init
+210105 init
