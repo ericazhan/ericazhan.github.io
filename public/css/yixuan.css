@@ -126,9 +126,11 @@ ul, ol, dl {
   padding-top: 5rem;
 }
 
+
 #search{
   padding-left:10rem;
 }
+
 
 dt {
   font-weight: bold;
@@ -840,6 +842,26 @@ a.pagination-item:hover {
       opacity: 0.5;
       font-weight: bolder;
     }
+
+    
+@media only screen and (max-width : 480px) {
+  #search {
+    padding-left:0 !important;
+  }
+
+  input:focus{
+    width: 150px !important;
+  }
+
+  input:focus ~ .search {
+    right: -150px;
+  }
+
+  .search-container {
+    width: 220px !important;
+  }
+}
+
 
 
 /*
