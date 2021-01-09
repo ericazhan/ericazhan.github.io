@@ -141,13 +141,17 @@ markdown: kramdown
 
 ## 电脑手机的responsive设计
 
-原则：为特殊需求，专门写一个css格式。
+原则：哪个设备有特殊格式需求，就专门给这个设备写一个css格式。
 
-比如，我希望自己的博客文章在电脑端，文本宽度最多550px。其他手机端不变。那么对于".post"我需要专门加一个为电脑屏幕的css格式：复制原有的css(margin-bottom)，再加上新格式(wid:550px)
+比如，我希望自己的博客文章在电脑端的文本宽度是550px，其他手机端不变。那么对于*.post*我需要专门加一个为电脑屏幕的css格式：新格式(wid:550px)
 
-responsive的语法很简单： `@media (device condition) { /* CSS Rules */ }`。
+responsive的语法很简单：
 
-电脑屏幕宽度一定大于500px，所以我写min-width: 500px
+`@media (device condition) { /* CSS Rules */ }`
+
+电脑屏幕宽度一定大于500px，所以设备条件是 min-width: 500px。
+
+前面是*.post*原格式，后面是为*.post*加入reponsive格式
 
 ```
 .post {
@@ -156,13 +160,12 @@ responsive的语法很简单： `@media (device condition) { /* CSS Rules */ }`�
 
 @media (min-width: 500px){
   .post {
-    margin-bottom:1em;
     width: 550px;
   }
 }
 ```
 
-commit：[🤸‍♀️ UPDATE: · @26567f3](https://github.com/ericazhan/ericazhan.github.io/commit/26567f34a3c3e2b75ccbbc0fc7e3b64b8bbcab10)
+commit实例：[文本宽度电脑端变短](https://github.com/ericazhan/ericazhan.github.io/commit/26567f34a3c3e2b75ccbbc0fc7e3b64b8bbcab10) ;  [搜索框手机端变小](https://github.com/ericazhan/ericazhan.github.io/commit/385b1630549d8020ba80c2f53150210adbc39d99)
 
 ref:  [Learn Responsive Web Design Principles: Create a Media Query - freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-principles/create-a-media-query)
 
