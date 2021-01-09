@@ -561,6 +561,13 @@ a.sidebar-nav-item:focus {
   margin-bottom: 1em;
 }
 
+@media (min-width: 500px){
+  .post {
+    margin-bottom:1em;
+    width: 550px;
+  }
+}
+
 /* Blog post or page title */
 .page-title,
 .post-title,
