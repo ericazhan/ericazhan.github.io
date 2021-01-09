@@ -10,7 +10,7 @@ tags: [经验,对外汉语,教学]
 
 主要参考资料是youtube的几个频道：
 
-- 上课方法，教材推荐，汉语知识都来自于：[Luna对外汉语工作室 Zhou - YouTube](https://www.youtube.com/channel/UCbl0xHih_T3SoINwDGijqbQ)
+- 上课方法，教材推荐，汉语知识来自：[Luna对外汉语工作室 Zhou - YouTube](https://www.youtube.com/channel/UCbl0xHih_T3SoINwDGijqbQ)
 - 好用工具，汉语知识，来自 [慧说中文 - YouTube](https://www.youtube.com/channel/UCo2wDfSOS4azuqrvniXHQWg)
 
 * TOC
@@ -101,10 +101,10 @@ tags: [经验,对外汉语,教学]
 - 第1节课： a o e i u ü  + 4声 + b p m f 
 - 第2节课：ai ei ao ou + d t n l g k h
 - 第3节课：an en ang eng ong
-- 第4节课： 复习+ j q x
-- 第5节课：
-- 第6节课：
-- 第7节课：
+- 第4节课： 复习+ j q x +  ia  ian  iang iao ie iong 
+- 第5节课：zh ch sh r + in ing iu(iou) + üe üan ün
+- 第6节课：z c s  + er ua uo uai uan uang ueng + ui(uei) un(uen) 
+- 第7节课：复习
 
 好用的拼音学习工具，推荐给学生：
 
@@ -130,7 +130,7 @@ tags: [经验,对外汉语,教学]
 - 第1节课： 简体繁体+汉字阅读顺序+方块字
 - 第2节课：汉字的6种造字法
 - 第3节课：永字八笔。偏旁部首。汉字结构。
-- 第4节课——：按照张朋朋老师的教材学习。
+- 第4节课及之后：按照张朋朋老师的教材学习。
 
 前三节课的参考资料：
 
@@ -144,6 +144,9 @@ tags: [经验,对外汉语,教学]
 
 该书配套mp3: [体验汉语口语教程1在线收听-喜马拉雅FM](https://www.ximalaya.com/gerenchengzhang/7084834/p3/)
 
+在这里可以下载到本书配套听力和幻灯片。[资源 - MoreFunChinese魔方汉语教学资源平台](http://www.morefunchinese.com/resource?page=11) 
+
 ## Log
 
+- 210110 补全pinyin节奏
 - 201223 init
