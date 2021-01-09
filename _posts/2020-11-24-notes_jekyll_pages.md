@@ -139,8 +139,36 @@ markdown: kramdown
 
 参考：[How I Add a Table of Contents to my Jekyll Blog Written in Markdown](http://www.seanbuscay.com/blog/jekyll-toc-markdown/)
 
+## 电脑手机的responsive设计
+
+原则：为特殊需求，专门写一个css格式。
+
+比如，我希望自己的博客文章在电脑端，文本宽度最多550px。其他手机端不变。那么对于".post"我需要专门加一个为电脑屏幕的css格式：复制原有的css(margin-bottom)，再加上新格式(wid:550px)
+
+responsive的语法很简单： `@media (device condition) { /* CSS Rules */ }`。
+
+电脑屏幕宽度一定大于500px，所以我写min-width: 500px
+
+```
+.post {
+  margin-bottom: 1em;
+}	}
+
+@media (min-width: 500px){
+  .post {
+    margin-bottom:1em;
+    width: 550px;
+  }
+}
+```
+
+commit：[🤸‍♀️ UPDATE: · @26567f3](https://github.com/ericazhan/ericazhan.github.io/commit/26567f34a3c3e2b75ccbbc0fc7e3b64b8bbcab10)
+
+ref:  [Learn Responsive Web Design Principles: Create a Media Query - freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-principles/create-a-media-query)
+
 ## Changelog
 
+- 210110 + reponsive设计
 - 201231 +博客增加目录
 - 201130 加入自定义域名章节，补充搜索章节的具体步骤
 - 201124 init
