@@ -2,7 +2,7 @@
 layout: post
 title: 博客修护笔记
 category: geek
-description: "如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？"
+description: "如何修改GitHub page中每篇博客的链接？如何加入全文搜索功能？如何把fork来的仓库之前的commit都清零？。。记录博客折腾过程"
 tags: [web,code]
 ---
 
@@ -169,8 +169,44 @@ commit实例：[文本宽度电脑端变短](https://github.com/ericazhan/ericaz
 
 ref:  [Learn Responsive Web Design Principles: Create a Media Query - freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-principles/create-a-media-query)
 
-## Changelog
+## 添加google analytic
 
+1. 去[Google Analytics](https://marketingplatform.google.com/about/analytics/)注册一个号。这里用户名不用考虑太多，是属于你google账号下的分用户名。按照自己需求取名就好。
+2. 选择“衡量网站”，输入你想衡量统计的网址，点击“创建”。
+3. 一般创建完会自动跳到代码页。把这些js代码复制到博客<head>中就完成啦。如果没有自动跳转，那么在管理(administration) --- 跟踪信息(Flux de données)，点进去会看到"跟踪代码js"。
+
+## 索引页面增加post计数和排序
+
+post计数的变量是 {{ site.posts | size }}
+按照categories计数，变量是 {{ site.categories.category | last | size }}
+
+排序的功能需要使用`sort`这个liquid语言自带的filter来排序。
+
+比如给category排序。如果不使用sort，默认是按照category添加的顺序排序。
+
+按照字母顺序alphabetic把各category排序: 先通过assing定义一个list,再在这个排序过的list里循环  
+
+```
+{% raw %} 
+{% assign sorted_categories = site.categories | sort %}
+{% for category in sorted_categories %}
+{% endraw %}
+```
+
+比如如果想把文章按标题排序：
+```
+{% raw %} 
+{{ site.pages | sort: "title", "last" }}
+{% endraw %}
+```
+PS, 为了呈现liquid语言，但又不想它被parser,需要使用[Raw标签](https://shopify.github.io/liquid/tags/raw/)。
+
+Ref: [sort-Stack Overflow](https://stackoverflow.com/questions/59890847/how-to-sort-categories-alphabetically-with-liquid)，
+[Advanced Liquid: Sort - Siteleaf](https://www.siteleaf.com/blog/advanced-liquid-sort/)， 
+[Liquid Filters-Jekyll](https://jekyllrb.com/docs/liquid/filters/)
+
+## Changelog
+- 210114 +google analytic + posts统计排序
 - 210110 + reponsive设计
 - 201231 +博客增加目录
 - 201130 加入自定义域名章节，补充搜索章节的具体步骤
