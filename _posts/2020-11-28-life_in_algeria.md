@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在阿尔及利亚生活两年半的经验分享
-category: life
+category: Local_Experience
 description: "在阿尔及利亚的生活经验分享"
 tags: [生活,旅居,经验]
 ---
