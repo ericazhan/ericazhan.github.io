@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 法国工科生找实习经验
-category: Local_Experience
+category: local_experience
 description: "如何在法国找实习"
 tags: [分享,经验,法国]
 ---
